@@ -53,7 +53,16 @@ export default function Section1() {
           aliqua esse cillum esse eu exercitation est. Ea aliqua incididunt
           occaecat aute proident proident magna aliqua dolore sint nisi.
         </p>
-        <Button>Rubrum</Button>
+        <Button
+          style={
+            {
+              "--i": 17,
+              "--slide-direction": "slide-right",
+            } as React.CSSProperties
+          }
+        >
+          Rubrum
+        </Button>
       </div>
       <div
         style={
@@ -68,7 +77,7 @@ export default function Section1() {
               "--slide-direction": "slide-up",
             } as React.CSSProperties
           }
-          className="slide flex h-max flex-col gap-4 overflow-hidden bg-sky-200 p-8 text-zinc-600"
+          className="slide flex h-max flex-col gap-4 overflow-hidden bg-sky-200 p-8 text-zinc-600 shadow-sm"
         >
           <div
             style={
@@ -86,7 +95,7 @@ export default function Section1() {
             style={
               {
                 "--i": 15,
-                "--slide-direction": "slide-down",
+                "--slide-direction": "slide-up",
               } as React.CSSProperties
             }
           >
@@ -105,13 +114,22 @@ export default function Section1() {
             style={
               {
                 "--i": 16,
-                "--slide-direction": "slide-left",
+                "--slide-direction": "slide-up",
               } as React.CSSProperties
             }
           >
             —Sermons of the seeress Paddra Nsu-Yeul
           </p>
-          <Button>Know more</Button>
+          <Button
+            style={
+              {
+                "--i": 18,
+                "--slide-direction": "slide-right",
+              } as React.CSSProperties
+            }
+          >
+            Know more
+          </Button>
         </div>
         <div
           style={
@@ -120,7 +138,7 @@ export default function Section1() {
               "--slide-direction": "slide-left",
             } as React.CSSProperties
           }
-          className="relative overflow-hidden border border-zinc-600 bg-sky-50"
+          className="relative overflow-hidden bg-sky-50 shadow-md"
         >
           <Image
             src="/wheel.jpg"
