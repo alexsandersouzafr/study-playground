@@ -12,12 +12,13 @@
 }
 
 .slide {
+  --i: 1;
   --slide-direction: slide-down;
   --duration: 1s;
   --stagger: 0.8s;
   --interval: calc(var(--duration) - var(--stagger));
   animation: var(--slide-direction) var(--duration)
-    calc(var(--interval) * var(--i)) ease-in-out both;
+    calc(var(--interval) * var(--i)) ease-out both;
 }
 
 @keyframes slide-down {

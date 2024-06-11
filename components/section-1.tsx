@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Section1() {
   return (
-    <div className="box-border grid h-[100vh] grid-cols-[auto,50%,100px] gap-16 overflow-hidden p-8 pt-32 *:rounded-xl">
+    <div className="grid h-[100vh] grid-cols-[auto,50%,100px] gap-16 p-8 pt-32 *:rounded-xl">
       <div
         style={
           {
@@ -80,7 +80,7 @@ export default function Section1() {
         <Button
           style={
             {
-              "--i": 17,
+              "--i": 18,
               "--slide-direction": "slide-right",
             } as React.CSSProperties
           }
@@ -112,7 +112,7 @@ export default function Section1() {
             }
             className="slide flex items-center justify-between p-0 font-serif text-2xl text-zinc-600"
           >
-            Know The Seeres Paddra Nsu-Yeul
+            Paddra Nsu-Yeul
           </div>
           <p
             className="slide"
@@ -147,7 +147,7 @@ export default function Section1() {
           <Button
             style={
               {
-                "--i": 18,
+                "--i": 17,
                 "--slide-direction": "slide-right",
               } as React.CSSProperties
             }
@@ -158,11 +158,11 @@ export default function Section1() {
         <div
           style={
             {
-              "--i": 14,
+              "--i": 13,
               "--slide-direction": "slide-left",
             } as React.CSSProperties
           }
-          className="relative overflow-hidden bg-zinc-200 shadow-md"
+          className="slide relative overflow-hidden bg-zinc-200 shadow-md"
         >
           <Image
             src="/goddess.jpg"
