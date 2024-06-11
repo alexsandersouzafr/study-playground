@@ -26,17 +26,37 @@ export default function Section1() {
           className="slide"
           style={
             {
+              "--i": 11,
+              "--slide-direction": "slide-up",
+            } as React.CSSProperties
+          }
+        >
+          Infinite in mystery is the gift of the Goddess
+          <br />
+          We seek it thus, and take to the sky
+          <br />
+          Ripples form on the water's surface
+          <br />
+          The wandering soul knows no rest
+        </p>
+        <p
+          className="slide"
+          style={
+            {
               "--i": 10,
               "--slide-direction": "slide-up",
             } as React.CSSProperties
           }
         >
-          Ut do commodo occaecat elit adipisicing. Occaecat ipsum culpa officia
-          occaecat nisi id elit est do ad fugiat pariatur commodo consectetur.
-          Anim commodo est consectetur cillum commodo consectetur cillum. Esse
-          tempor consectetur quis mollit. Laborum enim consequat excepteur
-          tempor id minim incididunt officia dolor et consequat tempor et.
-          Labore proident elit amet aute quis dolor.
+          There is no hate, only joy
+          <br />
+          For you are beloved by the goddess
+          <br />
+          Hero of the dawn,Healer of worlds
+          <br />
+          Dreams of the morrow hath the shattered soul
+          <br />
+          Pride is lost Wings stripped away, the end is nigh
         </p>
         <p
           className="slide"
@@ -47,11 +67,14 @@ export default function Section1() {
             } as React.CSSProperties
           }
         >
-          Veniam aute ea esse minim anim amet ex sit in cillum est. Et mollit
-          officia id qui velit. Lorem et do voluptate sint irure officia minim
-          dolore. Aliquip excepteur veniam qui fugiat sunt. Incididunt sit
-          aliqua esse cillum esse eu exercitation est. Ea aliqua incididunt
-          occaecat aute proident proident magna aliqua dolore sint nisi.
+          Even if the morrow is barren of promises
+          <br />
+          Nothing shall forestall my return
+          <br />
+          To become the dew that quenches the land
+          <br />
+          To spare the sands, the seas, the skies
+          <br />I offer thee this silent sacrifice
         </p>
         <Button
           style={
@@ -61,7 +84,7 @@ export default function Section1() {
             } as React.CSSProperties
           }
         >
-          Rubrum
+          Read Loveless
         </Button>
       </div>
       <div
