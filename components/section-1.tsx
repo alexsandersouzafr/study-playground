@@ -4,15 +4,7 @@ import Image from "next/image";
 
 export default function Section1() {
   return (
-    <div className="box-border grid h-[100vh] grid-cols-[100px,auto,50%] gap-16 overflow-hidden p-8 pt-32 *:rounded-xl">
-      <div
-        style={
-          { "--i": 16, "--slide-direction": "slide-up" } as React.CSSProperties
-        }
-        className="slide writing-vertical flex items-center gap-4 border-none text-zinc-600"
-      >
-        Made by Alexsander Souza. <div className="h-40 w-[1px] bg-zinc-600" />
-      </div>
+    <div className="box-border grid h-[100vh] grid-cols-[auto,50%,100px] gap-16 overflow-hidden p-8 pt-32 *:rounded-xl">
       <div
         style={
           {
@@ -137,6 +129,14 @@ export default function Section1() {
             alt="arcana"
           />
         </div>
+      </div>
+      <div
+        style={
+          { "--i": 16, "--slide-direction": "slide-up" } as React.CSSProperties
+        }
+        className="slide writing-vertical flex items-center gap-4 border-none text-zinc-600"
+      >
+        Made by Alexsander Souza. <div className="h-40 w-[1px] bg-zinc-600" />
       </div>
     </div>
   );
