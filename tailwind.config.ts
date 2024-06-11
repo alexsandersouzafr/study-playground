@@ -1,5 +1,6 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
-
+const defaultTheme = require("tailwindcss/defaultTheme");
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Poppins"', ...defaultTheme.fontFamily.sans],
+        serif: ['"David Libre"', ...defaultTheme.fontFamily.serif],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

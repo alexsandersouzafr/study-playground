@@ -3,31 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: rgb(224 242 254);
+  --fg: rgb(63 63 70);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.writing-vertical {
+  writing-mode: vertical-lr;
+}
+
+.slide-down {
+  --duration: 1s;
+  --stagger: 0.8s;
+  --interval: calc(var(--duration) - var(--stagger));
+  animation: slide-down var(--duration) calc(var(--interval) * var(--i))
+    ease-in-out both;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.reveal-right {
+  color: transparent;
+  background: linear-gradient(to right, var(--fg) 47%, transparent 60%);
+  background-clip: text;
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  animation: reveal-right 4s 0.5s ease both;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes reveal-right {
+  from {
+    border-color: transparent;
+    background-position: 100%;
+  }
+  to {
+    background-position: 0%;
+    border-color: var(--fg);
+  }
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: var(--fg);
+  animation: line-reveal 3s 0.5s ease-out both;
+}
+
+@keyframes line-reveal {
+  from {
+    opacity: 0;
+    clip-path: rect(50% 50% 50% 50%);
+  }
+  to {
+    opacity: 0.2;
+    clip-path: rect(0% 100% 100% 0%);
   }
 }
