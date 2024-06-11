@@ -132,7 +132,7 @@ export default function Section1() {
       </div>
       <div
         style={
-          { "--i": 16, "--slide-direction": "slide-up" } as React.CSSProperties
+          { "--i": 1, "--slide-direction": "slide-up" } as React.CSSProperties
         }
         className="slide writing-vertical flex items-center gap-4 border-none text-zinc-600"
       >
