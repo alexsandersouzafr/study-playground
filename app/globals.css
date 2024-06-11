@@ -11,17 +11,51 @@
   writing-mode: vertical-lr;
 }
 
-.slide-down {
+.slide {
+  --slide-direction: slide-down;
   --duration: 1s;
   --stagger: 0.8s;
   --interval: calc(var(--duration) - var(--stagger));
-  animation: slide-down var(--duration) calc(var(--interval) * var(--i))
-    ease-in-out both;
+  animation: var(--slide-direction) var(--duration)
+    calc(var(--interval) * var(--i)) ease-in-out both;
 }
 
 @keyframes slide-down {
   from {
     transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10%);
     opacity: 0;
   }
   to {

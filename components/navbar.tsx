@@ -14,8 +14,13 @@ export default function Navbar() {
           {navItems.map((item, i) => (
             <li
               key={i}
-              style={{ "--i": i + 3 } as React.CSSProperties}
-              className="slide-down cursor-pointer list-none rounded-lg border border-transparent px-6 py-1 transition-all duration-500 hover:border-sky-800/40"
+              style={
+                {
+                  "--i": i + 3,
+                  "--slide-direction": "slide-down",
+                } as React.CSSProperties
+              }
+              className="slide cursor-pointer list-none rounded-lg border border-transparent px-6 py-1 transition-all duration-500 hover:border-sky-800/40"
             >
               {item}
             </li>

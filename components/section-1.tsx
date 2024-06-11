@@ -4,24 +4,41 @@ import Image from "next/image";
 
 export default function Section1() {
   return (
-    <div className="box-border grid h-[100vh] grid-cols-[100px,auto,50%] gap-16 p-8 pt-32 *:rounded-xl">
+    <div className="box-border grid h-[100vh] grid-cols-[100px,auto,50%] gap-16 overflow-hidden p-8 pt-32 *:rounded-xl">
       <div
-        style={{ "--i": 11 } as React.CSSProperties}
-        className="slide-down writing-vertical flex items-center gap-4 border-none text-zinc-600"
+        style={
+          { "--i": 16, "--slide-direction": "slide-up" } as React.CSSProperties
+        }
+        className="slide writing-vertical flex items-center gap-4 border-none text-zinc-600"
       >
         Made by Alexsander Souza. <div className="h-40 w-[1px] bg-zinc-600" />
       </div>
       <div
-        style={{ "--i": 7 } as React.CSSProperties}
-        className="slide-down flex flex-col justify-between border border-b-2 border-zinc-600 bg-sky-50 p-16 text-zinc-600"
+        style={
+          {
+            "--i": 7,
+            "--slide-direction": "slide-right",
+          } as React.CSSProperties
+        }
+        className="slide flex flex-col justify-between overflow-hidden border border-b-2 border-zinc-600 bg-sky-50 p-16 text-zinc-600"
       >
         <h1
-          style={{ "--i": 8 } as React.CSSProperties}
-          className="slide-down font-serif text-7xl font-medium"
+          style={
+            { "--i": 8, "--slide-direction": "slide-up" } as React.CSSProperties
+          }
+          className="slide font-serif text-7xl font-medium"
         >
           The Gift Of The Godddess
         </h1>
-        <p className="slide-down" style={{ "--i": 15 } as React.CSSProperties}>
+        <p
+          className="slide"
+          style={
+            {
+              "--i": 10,
+              "--slide-direction": "slide-up",
+            } as React.CSSProperties
+          }
+        >
           Ut do commodo occaecat elit adipisicing. Occaecat ipsum culpa officia
           occaecat nisi id elit est do ad fugiat pariatur commodo consectetur.
           Anim commodo est consectetur cillum commodo consectetur cillum. Esse
@@ -29,7 +46,15 @@ export default function Section1() {
           tempor id minim incididunt officia dolor et consequat tempor et.
           Labore proident elit amet aute quis dolor.
         </p>
-        <p className="slide-down" style={{ "--i": 9 } as React.CSSProperties}>
+        <p
+          className="slide"
+          style={
+            {
+              "--i": 9,
+              "--slide-direction": "slide-up",
+            } as React.CSSProperties
+          }
+        >
           Veniam aute ea esse minim anim amet ex sit in cillum est. Et mollit
           officia id qui velit. Lorem et do voluptate sint irure officia minim
           dolore. Aliquip excepteur veniam qui fugiat sunt. Incididunt sit
@@ -39,22 +64,39 @@ export default function Section1() {
         <Button>Rubrum</Button>
       </div>
       <div
-        style={{ "--i": 6 } as React.CSSProperties}
-        className="slide-down grid grid-rows-[1fr,1fr] gap-6 text-sky-50 *:rounded-xl"
+        style={
+          { "--i": 6, "--slide-direction": "slide-down" } as React.CSSProperties
+        }
+        className="slide grid grid-rows-[1fr,1fr] gap-6 text-sky-50 *:rounded-xl"
       >
         <div
-          style={{ "--i": 10 } as React.CSSProperties}
-          className="slide-down flex h-max flex-col gap-4 bg-sky-200 p-8 text-zinc-600"
+          style={
+            {
+              "--i": 12,
+              "--slide-direction": "slide-up",
+            } as React.CSSProperties
+          }
+          className="slide flex h-max flex-col gap-4 overflow-hidden bg-sky-200 p-8 text-zinc-600"
         >
           <div
-            style={{ "--i": 12 } as React.CSSProperties}
-            className="slide-down flex items-center justify-between p-0 font-serif text-2xl text-zinc-600"
+            style={
+              {
+                "--i": 13,
+                "--slide-direction": "slide-up",
+              } as React.CSSProperties
+            }
+            className="slide flex items-center justify-between p-0 font-serif text-2xl text-zinc-600"
           >
             Know The Seeres Paddra Nsu-Yeul
           </div>
           <p
-            className="slide-down"
-            style={{ "--i": 13 } as React.CSSProperties}
+            className="slide"
+            style={
+              {
+                "--i": 15,
+                "--slide-direction": "slide-down",
+              } as React.CSSProperties
+            }
           >
             Her Providence sought nothing. Her Providence made nothing. She but
             looked on, silent in Her sorrow. The Goddess pitied mortals,
@@ -67,15 +109,25 @@ export default function Section1() {
             all was lost.
           </p>
           <p
-            className="slide-down text-right italic"
-            style={{ "--i": 16 } as React.CSSProperties}
+            className="slide text-right italic"
+            style={
+              {
+                "--i": 16,
+                "--slide-direction": "slide-left",
+              } as React.CSSProperties
+            }
           >
             —Sermons of the seeress Paddra Nsu-Yeul
           </p>
           <Button>Know more</Button>
         </div>
         <div
-          style={{ "--i": 14 } as React.CSSProperties}
+          style={
+            {
+              "--i": 14,
+              "--slide-direction": "slide-left",
+            } as React.CSSProperties
+          }
           className="relative overflow-hidden border border-zinc-600 bg-sky-50"
         >
           <Image
