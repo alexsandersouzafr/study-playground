@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Button from "./button";
 import Image from "next/image";
@@ -161,12 +162,12 @@ export default function Section1() {
               "--slide-direction": "slide-left",
             } as React.CSSProperties
           }
-          className="relative overflow-hidden bg-sky-50 shadow-md"
+          className="relative overflow-hidden bg-zinc-200 shadow-md"
         >
           <Image
-            src="/wheel.jpg"
+            src="/goddess.jpg"
             fill
-            className="object-cover opacity-70"
+            className="object-cover object-[0,10%] mix-blend-overlay"
             alt="arcana"
           />
         </div>
