@@ -13,8 +13,8 @@ export default function Cursor() {
     function lerp() {
       const dx = targetPoint.x - currentPoint.x;
       const dy = targetPoint.y - currentPoint.y;
-      currentPoint.x += dx * 0.1;
-      currentPoint.y += dy * 0.1;
+      currentPoint.x += dx * 0.03;
+      currentPoint.y += dy * 0.03;
       setX(currentPoint.x);
       setY(currentPoint.y);
     }
