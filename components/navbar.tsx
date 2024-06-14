@@ -1,30 +1,50 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { Sparkles } from "lucide-react";
+import { useRef } from "react";
+
 const navItems = ["brünhydr", "coeurl", "fenrir", "bismarck"];
 
 export default function Navbar() {
+  const nav = useRef(null);
+
+  useGSAP(
+    () => {
+      let tl = gsap.timeline();
+      tl.to("li", {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.5,
+        ease: "expo.in",
+      });
+    },
+    { scope: nav },
+  );
+
   return (
-    <div className="fixed top-0 z-30 flex w-full flex-col items-center backdrop-blur-xl">
+    <div className="fixed top-0 z-30 flex w-full flex-col items-center bg-sky-500/10 shadow-md shadow-sky-950/5 backdrop-blur-xl">
       <div
-        style={{ "--i": 2 } as React.CSSProperties}
-        className="slide-down flex w-full items-center justify-between px-8 py-4"
+        className="flex w-full items-center justify-between px-8 py-2"
+        ref={nav}
       >
-        <h1 className="reveal-right rounded-xl py-2 font-serif text-6xl">
+        <h1 className="reveal-right rounded-xl py-2 font-serif text-4xl text-sky-950">
           The Crystarium
         </h1>
-        <nav className="flex gap-10 font-serif text-2xl text-sky-800">
+        <nav className="flex items-center gap-10 font-serif text-lg text-sky-800">
           {navItems.map((item, i) => (
             <li
               key={i}
-              style={
-                {
-                  "--i": i + 3,
-                  "--slide-direction": "slide-down",
-                } as React.CSSProperties
-              }
-              className="slide cursor-pointer list-none rounded-lg border border-transparent px-6 py-1 transition-all duration-500 hover:border-sky-800/40"
+              className="-translate-y-12 cursor-pointer list-none rounded-lg border border-transparent px-6 py-1 tracking-widest opacity-0 transition-all duration-500 hover:border-sky-800/40"
             >
               {item}
             </li>
           ))}
+          <li className="list-none stroke-[1px]">
+            <Sparkles />
+          </li>
         </nav>
       </div>
       <div className="line" />

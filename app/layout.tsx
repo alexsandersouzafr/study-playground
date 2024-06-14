@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-sky-100">
+    <html lang="en" className="bg-sky-200">
       <body className="relative scroll-smooth">
         <Cursor />
         <Navbar />
