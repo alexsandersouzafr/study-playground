@@ -4,8 +4,8 @@ export default function Section2() {
   return (
     <section className="relative flex h-screen w-full justify-center overflow-hidden bg-sky-950">
       <MagicCircle />
-      <h1 className="mt-32 w-[80%] text-center font-serif text-8xl text-sky-50">
-        Believing in Magic will
+      <h1 className="mt-40 w-[80%] text-center font-serif text-6xl text-sky-50">
+        Believing in <span className="text-amber-300">Magic</span> will
         <br />
         make you stronger.
       </h1>
