@@ -13,6 +13,10 @@ const config: Config = {
         sans: ['"Poppins"', ...defaultTheme.fontFamily.sans],
         serif: ['"David Libre"', ...defaultTheme.fontFamily.serif],
       },
+      animation: {
+        "spin-slow": "spin 60s linear infinite",
+        "spin-slow-2": "spin 120s linear infinite reverse",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

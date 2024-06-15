@@ -30,7 +30,7 @@ export default function Navbar() {
         className="flex w-full items-center justify-between px-8 py-2"
         ref={nav}
       >
-        <h1 className="reveal-right rounded-xl py-2 font-serif text-4xl text-sky-950">
+        <h1 className="reveal-right rounded-xl py-2 font-serif text-4xl">
           The Crystarium
         </h1>
         <nav className="flex items-center gap-10 font-serif text-lg text-sky-800">
