@@ -17,9 +17,11 @@ export default function Section2() {
         .timeline({
           scrollTrigger: {
             trigger: section2.current,
-            start: "top 30%",
+            start: "top 20%",
+            end: "bottom bottom",
             toggleActions: "play play reverse reverse",
-            markers: true,
+            scrub: 3,
+            // markers: true,
           },
         })
         .from("h1", { opacity: 0, duration: 1, ease: "power1" })

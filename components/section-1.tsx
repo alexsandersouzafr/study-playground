@@ -25,6 +25,7 @@ export default function Section1() {
       const exitTrigger = {
         trigger: container.current,
         start: "top top",
+        scrub: 3,
         toggleActions: "play play reverse reverse", // onEnter, onLeave, onEnterBack, and onLeaveBack
         // markers: true,
       };
@@ -143,7 +144,7 @@ export default function Section1() {
           <Button>Read Loveless</Button>
         </div>
       </div>
-      <div className="slide grid grid-rows-[1fr,1fr] gap-6 text-sky-50 *:rounded-xl">
+      <div className="slide grid grid-rows-2 gap-6 text-sky-50 *:rounded-xl">
         <div className="slide yeul flex h-max flex-col gap-4 overflow-hidden bg-amber-50 p-8 text-zinc-600 shadow-sm">
           <div className="slide flex items-center justify-between p-0 font-serif text-2xl text-sky-950">
             Paddra Nsu-Yeul
