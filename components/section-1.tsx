@@ -8,8 +8,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Section1() {
-  gsap.registerPlugin(ScrollTrigger);
   const container = useRef(null);
   useGSAP(
     () => {
@@ -33,23 +34,27 @@ export default function Section1() {
         x: -50,
         duration: 2,
         opacity: 0,
+        ease: "power1",
       });
       gsap.to(".yeul", {
         scrollTrigger: exitTrigger,
         y: 50,
         duration: 1,
         opacity: 0,
+        ease: "power1",
       });
       gsap.to(".picture", {
         scrollTrigger: exitTrigger,
         x: 50,
         duration: 1,
         opacity: 0,
+        ease: "power1",
       });
       gsap.to(container.current, {
         scrollTrigger: exitTrigger,
         backgroundColor: "rgb(8, 47, 73)",
         duration: 2,
+        ease: "power1",
       });
 
       intro
@@ -58,14 +63,14 @@ export default function Section1() {
           opacity: 0,
           duration: 1,
           delay: 2,
-          ease: "sine.out",
+          ease: "power1",
           stagger: 0.1,
         })
         .from("p", {
           y: 50,
           opacity: 0,
           duration: 0.5,
-          ease: "sine.out",
+          ease: "power1",
           stagger: 0.3,
         })
         .from(
@@ -74,7 +79,7 @@ export default function Section1() {
             y: 30,
             opacity: 0,
             duration: 0.5,
-            ease: "sine.out",
+            ease: "power1",
             stagger: 0.5,
           },
           "-=25%",
@@ -85,7 +90,7 @@ export default function Section1() {
             x: 50,
             opacity: 0,
             duration: 0.5,
-            ease: "sine.out",
+            ease: "power1",
             stagger: 0.8,
           },
           "-=80%",
