@@ -6,61 +6,99 @@ import Button from "./button";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Section1() {
+  gsap.registerPlugin(ScrollTrigger);
   const container = useRef(null);
   useGSAP(
     () => {
-      let tl = gsap.timeline({ trigger: ".container" });
-      tl.from(
-        ".slide",
-        {
+      let intro = gsap.timeline();
+
+      gsap.fromTo(
+        container.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+      );
+
+      const exitTrigger = {
+        trigger: container.current,
+        start: "top top",
+        toggleActions: "play play reverse reverse", // onEnter, onLeave, onEnterBack, and onLeaveBack
+        // markers: true,
+      };
+
+      gsap.to(".goddess", {
+        scrollTrigger: exitTrigger,
+        x: -50,
+        duration: 2,
+        opacity: 0,
+      });
+      gsap.to(".yeul", {
+        scrollTrigger: exitTrigger,
+        y: 50,
+        duration: 1,
+        opacity: 0,
+      });
+      gsap.to(".picture", {
+        scrollTrigger: exitTrigger,
+        x: 50,
+        duration: 1,
+        opacity: 0,
+      });
+      gsap.to(container.current, {
+        scrollTrigger: exitTrigger,
+        backgroundColor: "rgb(8, 47, 73)",
+        duration: 2,
+      });
+
+      intro
+        .from(".slide", {
           x: -50,
           opacity: 0,
           duration: 1,
+          delay: 2,
           ease: "sine.out",
           stagger: 0.1,
-        },
-        "-=%80",
-      );
-      tl.from("p", {
-        y: 50,
-        opacity: 0,
-        duration: 0.5,
-        ease: "sine.out",
-        stagger: 0.3,
-      });
-      tl.from(
-        ".signature",
-        {
-          y: 30,
+        })
+        .from("p", {
+          y: 50,
           opacity: 0,
           duration: 0.5,
           ease: "sine.out",
-          stagger: 0.5,
-        },
-        "-=25%",
-      );
-      tl.from(
-        ".button",
-        {
-          x: 50,
-          opacity: 0,
-          duration: 0.5,
-          ease: "sine.out",
-          stagger: 0.5,
-        },
-        "-=25%",
-      );
+          stagger: 0.3,
+        })
+        .from(
+          ".signature",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.5,
+            ease: "sine.out",
+            stagger: 0.5,
+          },
+          "-=25%",
+        )
+        .from(
+          ".button",
+          {
+            x: 50,
+            opacity: 0,
+            duration: 0.5,
+            ease: "sine.out",
+            stagger: 0.8,
+          },
+          "-=80%",
+        );
     },
     { scope: container },
   );
   return (
     <div
-      className="grid h-[100vh] grid-cols-[auto,50%,100px] gap-16 p-8 pt-32 *:rounded-xl"
+      className="section grid h-[100vh] grid-cols-[auto,50%,100px] gap-16 p-8 pt-32 opacity-0 *:rounded-xl"
       ref={container}
     >
-      <div className="slide flex flex-col justify-between gap-16 overflow-hidden border-zinc-600 bg-sky-50 p-16 text-sky-600 shadow-lg">
+      <div className="slide goddess flex flex-col justify-between gap-16 overflow-hidden border-zinc-600 bg-sky-50 p-16 text-sky-600 shadow-lg">
         <h1 className="slide font-serif text-7xl font-medium">
           The Gift Of The Godddess
         </h1>
@@ -101,7 +139,7 @@ export default function Section1() {
         </div>
       </div>
       <div className="slide grid grid-rows-[1fr,1fr] gap-6 text-sky-50 *:rounded-xl">
-        <div className="slide flex h-max flex-col gap-4 overflow-hidden bg-amber-50 p-8 text-zinc-600 shadow-sm">
+        <div className="slide yeul flex h-max flex-col gap-4 overflow-hidden bg-amber-50 p-8 text-zinc-600 shadow-sm">
           <div className="slide flex items-center justify-between p-0 font-serif text-2xl text-sky-950">
             Paddra Nsu-Yeul
           </div>
@@ -123,7 +161,7 @@ export default function Section1() {
             <Button>Know more</Button>
           </div>
         </div>
-        <div className="slide relative overflow-hidden bg-zinc-200 shadow-md">
+        <div className="slide picture relative overflow-hidden bg-zinc-200 shadow-md">
           <Image
             src="/goddess.jpg"
             fill

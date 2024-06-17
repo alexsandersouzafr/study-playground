@@ -3,7 +3,7 @@ import Section2 from "@/components/section-2";
 
 export default function Home() {
   return (
-    <main className="space-y-16">
+    <main>
       <Section1 />
       <Section2 />
     </main>
