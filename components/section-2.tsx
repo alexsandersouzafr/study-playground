@@ -33,7 +33,7 @@ export default function Section2() {
         .from(".magic2", {
           opacity: 0,
           duration: 1,
-          stagger: 0.95,
+          stagger: 0.4,
           ease: "power1",
         });
     },
