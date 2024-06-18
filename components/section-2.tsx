@@ -43,20 +43,19 @@ export default function Section2() {
   return (
     <section
       ref={section2}
-      className="relative flex h-screen w-full justify-center overflow-hidden bg-sky-950"
+      className="relative flex h-screen w-full justify-center overflow-hidden bg-sky-950 pt-32 md:items-center xl:items-start"
     >
-      <MagicCircle />
-      <h1 className="mt-40 w-[80%] text-center font-serif text-6xl text-sky-50">
-        Believing in <span className="text-amber-300">Magic</span> can
-        <br />
-        make you strong.
+      <h1 className="z-20 mt-40 w-[80%] text-center font-serif text-4xl text-sky-50 md:text-7xl lg:mt-0">
+        Believing in <span className="text-amber-300">Magic</span> can make you
+        strong.
       </h1>
+      <MagicCircle />
     </section>
   );
 }
 
 const MagicCircle = () => (
-  <div className="absolute bottom-0 left-[50%] flex items-center justify-center">
+  <div className="absolute bottom-0 left-[50%] flex items-center justify-center opacity-10 md:opacity-15 xl:opacity-100">
     <Magic1 className="magic1 absolute animate-spin-slow text-sky-700" />
     <Magic2 className="magic2 absolute animate-spin-slow-2 text-sky-100" />
   </div>

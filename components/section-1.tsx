@@ -12,11 +12,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Section1() {
   const container = useRef(null);
+
   useGSAP(
     () => {
       const intro = gsap.timeline();
       const mm = gsap.matchMedia();
-      mm.add("(max-width: 1024px)", () => {
+
+      gsap.fromTo(
+        container.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+      );
+
+      mm.add("(max-width: 1023px)", () => {
         const exitTrigger = {
           trigger: container.current,
           start: "75% top",
@@ -53,46 +61,41 @@ export default function Section1() {
         });
       });
 
-      gsap.fromTo(
-        container.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 1 },
-      );
-
-      const exitTrigger = {
-        trigger: container.current,
-        start: "top top",
-        scrub: 3,
-        toggleActions: "play play reverse reverse", // onEnter, onLeave, onEnterBack, and onLeaveBack
-        // markers: true,
-      };
-
-      gsap.to(".goddess", {
-        scrollTrigger: exitTrigger,
-        x: -50,
-        duration: 2,
-        opacity: 0,
-        ease: "power1",
-      });
-      gsap.to(".yeul", {
-        scrollTrigger: exitTrigger,
-        y: 50,
-        duration: 1,
-        opacity: 0,
-        ease: "power1",
-      });
-      gsap.to(".picture", {
-        scrollTrigger: exitTrigger,
-        x: 50,
-        duration: 1,
-        opacity: 0,
-        ease: "power1",
-      });
-      gsap.to(container.current, {
-        scrollTrigger: exitTrigger,
-        backgroundColor: "rgb(8, 47, 73)",
-        duration: 2,
-        ease: "power1",
+      mm.add("(min-width:1024px)", () => {
+        const exitTrigger = {
+          trigger: container.current,
+          start: "top top",
+          scrub: 3,
+          toggleActions: "play play reverse reverse", // onEnter, onLeave, onEnterBack, and onLeaveBack
+          // markers: true,
+        };
+        gsap.to(".goddess", {
+          scrollTrigger: exitTrigger,
+          x: -50,
+          duration: 2,
+          opacity: 0,
+          ease: "power1",
+        });
+        gsap.to(".yeul", {
+          scrollTrigger: exitTrigger,
+          y: 50,
+          duration: 1,
+          opacity: 0,
+          ease: "power1",
+        });
+        gsap.to(".picture", {
+          scrollTrigger: exitTrigger,
+          x: 50,
+          duration: 1,
+          opacity: 0,
+          ease: "power1",
+        });
+        gsap.to(container.current, {
+          scrollTrigger: exitTrigger,
+          backgroundColor: "rgb(8, 47, 73)",
+          duration: 2,
+          ease: "power1",
+        });
       });
 
       intro
@@ -138,10 +141,10 @@ export default function Section1() {
   );
   return (
     <div
-      className="section flex flex-col gap-8 p-2 py-8 pt-32 opacity-0 *:rounded-xl lg:grid lg:h-screen lg:grid-cols-[4fr,4fr,1fr] lg:py-16 lg:pt-24 xl:px-8"
+      className="section flex flex-col gap-8 p-2 py-8 pt-32 opacity-0 *:rounded-xl lg:grid lg:grid-cols-[4fr,4fr,1fr] lg:py-16 lg:pt-24 xl:h-screen xl:px-8"
       ref={container}
     >
-      <div className="slide goddess flex h-full flex-col gap-8 border-zinc-600 bg-sky-50 p-4 text-sky-600 shadow-lg lg:p-8">
+      <div className="slide goddess flex h-full flex-col justify-between gap-8 border-zinc-600 bg-sky-50 p-4 text-sky-600 shadow-lg lg:p-8">
         <h1 className="slide font-serif text-4xl font-medium lg:text-5xl xl:text-7xl">
           The Gift Of The Godddess
         </h1>
@@ -181,8 +184,8 @@ export default function Section1() {
           <Button>Read Loveless</Button>
         </div>
       </div>
-      <div className="slide grid h-full grid-rows-[2fr,1fr] gap-16 text-sky-50 *:rounded-xl lg:gap-4 xl:grid-rows-[1fr,1fr]">
-        <div className="slide yeul flex h-max flex-col gap-4 overflow-hidden bg-amber-50 p-4 text-zinc-600 shadow-sm">
+      <div className="slide flex h-full flex-col gap-16 text-sky-50 *:rounded-xl lg:gap-4">
+        <div className="slide yeul flex h-max shrink-0 flex-col gap-4 overflow-hidden bg-amber-50 p-4 text-zinc-600 shadow-sm">
           <div className="slide flex items-center justify-between p-0 font-serif text-2xl text-sky-950">
             Paddra Nsu-Yeul
           </div>
@@ -204,7 +207,7 @@ export default function Section1() {
             <Button>Know more</Button>
           </div>
         </div>
-        <div className="slide picture relative overflow-hidden bg-zinc-200 shadow-md">
+        <div className="slide picture relative h-96 w-full overflow-hidden bg-zinc-200 shadow-md lg:h-full">
           <Image
             src="/goddess.jpg"
             fill

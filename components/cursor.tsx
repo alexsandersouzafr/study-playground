@@ -46,7 +46,7 @@ export default function Cursor() {
           "--y": `${y}px`,
         } as React.CSSProperties
       }
-      className="cursor"
+      className="cursor hidden md:block"
     />
   );
 }
